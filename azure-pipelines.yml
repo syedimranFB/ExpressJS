@@ -3,6 +3,7 @@ trigger:
 
 pool:
   vmImage: windows
+  environment: local 
 
 stages:
 - stage: Build
