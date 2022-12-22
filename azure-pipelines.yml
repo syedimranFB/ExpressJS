@@ -29,5 +29,6 @@ stages:
      runOnce:
        deploy:
          steps:
-           - script: npm install; npm start
+           - script: npm install
+                     npm start
              displayName: 'Dev based stage'
