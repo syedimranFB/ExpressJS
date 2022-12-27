@@ -12,5 +12,5 @@ jobs:
         deploy:
           steps:
           - script: |
-              npm install
-              npm start
+              sudo npm install
+              sudo npm start
