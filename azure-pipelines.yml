@@ -1,36 +1,15 @@
 trigger: none
-
-pool:
-  vmImage: windows-latest
-
-stages:
-
-- stage: Build
-  dependsOn: [] # This will remove implicit dependency and run in parallel with the stage: Tests above 
-  jobs:
-  - job:
-    displayName: Build the application
-    steps:
-    - script: |
-        npm install
-        npm run
-        npm exec
-        echo ... commands successfully completed.
-      displayName: 'Run build scripts & tasks'
-
-- stage: Dev
-  dependsOn:
-  - Build
-  jobs:
-  - deployment:
-    displayName: Dev deploy
-    environment: nodeCI
-    strategy:
-     runOnce:
-       deploy:
-         steps:
-           - script: npm install
-                     npm start
-             displayName: 'Dev based stage'
-    
-    
+jobs:
+- deployment: VMDeploy
+  displayName: web
+  pool:
+    vmImage: 'Ubuntu-latest'
+  environment:
+    name: nodeCI
+    resourceType: VirtualMachine
+  strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: npm install
+                    npm start
