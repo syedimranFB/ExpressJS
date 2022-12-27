@@ -6,7 +6,7 @@ jobs:
     resourceType: VirtualMachine
   strategy:
       rolling:
-        maxParallel:  #for percentages, mention as x%
+        maxParallel: 1 #for percentages, mention as x%
         preDeploy:
           steps:
           - download: current
