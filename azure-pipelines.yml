@@ -1,17 +1,17 @@
+  - task: Npm@1
+    inputs:
+      command: install
+  - task: Npm@1
+    inputs:
+      command: custom
+      customCommand: start
+
 trigger: none
 jobs:
-- deployment: VMDeploy
-  displayName: web
-  pool:
-    vmImage: 'Ubuntu-latest'
-  environment:
-    name: nodeCI
-    resourceType: VirtualMachine
-
-- task: Npm@1
-  inputs:
-    command: 'install'
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    customCommand: 'start'
+  - deployment: VMDeploy
+    displayName: web
+    pool:
+      vmImage: Ubuntu-latest
+    environment:
+      name: nodeCI
+      resourceType: VirtualMachine
