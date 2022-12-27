@@ -24,7 +24,7 @@ stages:
   jobs:
   - deployment:
     displayName: Dev deploy
-    environment: local
+    environment: nodeCI
     strategy:
      runOnce:
        deploy:
@@ -32,3 +32,5 @@ stages:
            - script: npm install
                      npm start
              displayName: 'Dev based stage'
+    
+    
