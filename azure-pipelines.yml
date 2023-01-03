@@ -10,4 +10,4 @@ jobs:
       runOnce:
         deploy:
           steps:
-          - script: git clone https://github.com/syedimranFB/ExpressJS.git ; cd ExpressJS ;
+          - script: git clone https://github.com/syedimranFB/ExpressJS.git
